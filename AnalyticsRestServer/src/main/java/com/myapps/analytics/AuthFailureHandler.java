@@ -11,6 +11,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 
+//Un used file
 @Component
 public class AuthFailureHandler extends SimpleUrlAuthenticationFailureHandler {
     @Override
