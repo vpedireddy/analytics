@@ -15,7 +15,7 @@ public class UserRestClient {
 	
 	private static RestTemplate restTemplate = new RestTemplate();
 	
-	public static void main(String args[]){
+	/*public static void main(String args[]){
 		
 		ResponseEntity<User> result =null;
 		User user = getUserForLogin();
@@ -41,7 +41,7 @@ public class UserRestClient {
 		User u = result.getBody();
 		System.out.println("RESULT->"+u);
 				
-	}
+	}*/
 	
 	private static User getUserForLogin(){
 		User u = new User();

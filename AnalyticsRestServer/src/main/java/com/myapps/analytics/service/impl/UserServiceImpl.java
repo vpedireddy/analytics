@@ -5,7 +5,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -22,8 +21,19 @@ public class UserServiceImpl implements UserService {
 	private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
 	@Autowired
-	@Lazy
 	private UserMapper userMapper;
+
+	/*@Autowired
+	public void setUserMapper(UserMapper userMapper) {
+		this.userMapper = userMapper;
+	}
+
+	*//**
+	 * @return the userMapper
+	 *//*
+	public UserMapper getUserMapper() {
+		return userMapper;
+	}*/
 
 	@Override
 	public User findUserById(int id) {
@@ -73,7 +83,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getAuthenticatedUser() {
 		log.info("AnalyticsRestServer:[UserServiceImpl:getAuthenticatedUser]:::::");
-		
+
 		User u = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		return u;
 	}

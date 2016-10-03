@@ -31,6 +31,10 @@ public class WebAppInitializer{
         //defaultProperties.put("spring.datasource.password", "Value Two");
         //defaultProperties.put("spring.datasource.driver-class-name", "com.mysql.jdbc.Driver");
         defaultProperties.put("spring.main.show-banner", true);
+        
+        defaultProperties.put("spring.data.mongodb.database", "userdb");
+        defaultProperties.put("spring.data.mongodb.host", "localhost");
+        defaultProperties.put("spring.data.mongodb.port", "27017");
 
         springApplication.setDefaultProperties(defaultProperties);
         springApplication.run(args);
